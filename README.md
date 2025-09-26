@@ -37,7 +37,7 @@ llamafactory-cli chat script/infer_hf.yaml
 ### Option 2: vLLM Inference
 (1) Merge with Base Model
 ```bash
-python convert_upcycle.py \
+python convert_model.py \
   --adapter_path ./r1-llama-8b-s2 \
   --output_path ./llama-8b-upcycle \
   --arch llama
