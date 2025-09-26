@@ -260,7 +260,6 @@ class LlamaAttention(nn.Module):
         return attn_output, attn_weights
 
 
-# ======== MoE for Llama (仿照Qwen2MoE) ========
 class LlamaExpert(nn.Module):
     def __init__(self, config):
         super().__init__()
@@ -469,7 +468,6 @@ class LlamaPreTrainedModel(PreTrainedModel):
             module.weight.data.fill_(1.0)
 
 
-# ======== LlamaMoEConfig (仿照Qwen2MoEConfig) ========
 class LlamaMoEConfig(LlamaConfig):
     model_type = "llamamoe"
     keys_to_ignore_at_inference = ["past_key_values"]
@@ -490,7 +488,6 @@ class LlamaMoEConfig(LlamaConfig):
         self.C = C
         super().__init__(**kwargs)
 
-# 修改LlamaPreTrainedModel的config_class为LlamaMoEConfig
 LlamaPreTrainedModel.config_class = LlamaMoEConfig
 
 
