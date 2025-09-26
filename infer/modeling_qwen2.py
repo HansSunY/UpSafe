@@ -149,12 +149,7 @@ class MLP(nn.Module, MoeLayer):
         batch_size, sequence_length, hidden_dim = hidden_states.shape
         hidden_states = hidden_states.view(-1, hidden_dim)
 
-        # 原始路由分数
         router_logits = router(hidden_states)  # [batch*seq, num_experts]
-        
-        # 分离bias routing weights计算和hidden states系数计算 follow Sujianlin blog
-
-        # TODO: 增加safe tempature
         bias_routing_weights = torch.sigmoid(router_logits).to(torch.float)
         C = self.config.C
         bias_routing_weights[:, 0] += (0.5 - self.config.safe_tempature) * C
@@ -169,9 +164,7 @@ class MLP(nn.Module, MoeLayer):
 
         _, selected_experts = torch.topk(bias_routing_weights, self.topk, dim=-1)  # [batch*seq, topk]
 
-        # 使用selected_experts作为索引
         routing_weights = routing_weights.gather(-1, selected_experts)  # [batch*seq, topk]
-        # 仅当topk>1时进行归一化
         if self.topk > 1:
             routing_weights /= routing_weights.sum(dim=-1, keepdim=True)
             
@@ -235,10 +228,8 @@ class Qwen2MoEMLP(MLP):
         init_moe_weights: bool = False,
         aux_loss_coef: float = 1e-3,
     ):
-        # 构建 expert0：符合 Gemma3 MLP 的结构（gate/up/down/act）
         expert0 = Qwen2Expert(config)
 
-        # 调用 PEFT 提供的 MLP 构造器，逻辑保持不变
         super().__init__(
             expert0=expert0,
             adapter_name=adapter_name,
