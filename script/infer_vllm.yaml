@@ -1,0 +1,7 @@
+model_name_or_path: ./llama-8b-upcycle
+template: llama3
+do_sample: false
+infer_backend: vllm
+vllm_enforce_eager: true
+vllm_gpu_util: 0.95
+vllm_maxlen: 1024

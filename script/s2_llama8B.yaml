@@ -1,0 +1,49 @@
+### model
+model_name_or_path: ./Llama-3.1-8B-Instruct
+adapter_name_or_path: ./llama_8b_s1
+trust_remote_code: false
+
+### method
+stage: sft
+do_train: true
+do_eval: false
+finetuning_type: moe
+deepspeed: ./ds_config_zero3.json
+
+### dataset
+dataset: star_eval,star_anchor
+dataset_dir: ./LLaMA-Factory-093/data
+template: llama3
+cutoff_len: 1024
+# max_samples: 1000
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: ./llama_8b_s2
+logging_steps: 1
+save_steps: 50
+plot_loss: true
+overwrite_output_dir: true
+print_param_status: true
+
+### train
+train_only_router: true
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 4
+num_train_epochs: 20
+save_total_limit: 2
+learning_rate: 5.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+fp16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+report_to: tensorboard
+logging_dir: /home/admin/logs/tfevent
+sg_loss_coef: 0.1
+layers_to_moe: 13,17,18
+moe_num_experts: 4
+topk: 2
+disable_gradient_checkpointing: true
