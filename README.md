@@ -75,10 +75,13 @@ and validation limits in this release.
 
 ## Citation
 
-```text
-Yuhao Sun, Lingyun Yu, Zhuoer Xu, Kun Yang, Shiwen Cui, Yongdong Zhang, Hongtao Xie.
-UpSafe℃: Upcycling for Controllable Safety in Large Language Models.
-Advances in Neural Information Processing Systems, 2026.
+```bibtex
+@InProceedings{Sun_2026_NeurIPS,
+    author    = {Sun, Yuhao and Yu, Lingyun and Xu, Zhuoer and Yang, Kun and Cui, Shiwen and Zhang, Yongdong and Xie, Hongtao},
+    title     = {UpSafe{$^\circ$C}: Upcycling for Controllable Safety in Large Language Models},
+    booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+    year      = {2026}
+}
 ```
 
 ## Acknowledgments and license
