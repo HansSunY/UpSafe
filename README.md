@@ -68,10 +68,7 @@ and can increase refusal on benign prompts. The checkpoint field
 
 Configurations cover Llama-3.1-8B, Qwen2.5-7B/14B, and their R1-Distill variants.
 See the [reproduction guide](docs/reproduction.md) for layer scans, model paths,
-per-model configurations, and individual evaluation commands. See
-[configuration notes](CONFIG_NOTES.md) for differences recorded between paper
-settings and development runs, and [review notes](docs/code_review.md) for fixes
-and validation limits in this release.
+per-model configurations, and individual evaluation commands.
 
 ## Citation
 
