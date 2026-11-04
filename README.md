@@ -75,9 +75,11 @@ and validation limits in this release.
 
 ## Citation
 
+```text
 Yuhao Sun, Lingyun Yu, Zhuoer Xu, Kun Yang, Shiwen Cui, Yongdong Zhang, Hongtao Xie.
-**UpSafe℃: Upcycling for Controllable Safety in Large Language Models.**
+UpSafe℃: Upcycling for Controllable Safety in Large Language Models.
 Advances in Neural Information Processing Systems, 2026.
+```
 
 ## Acknowledgments and license
 
