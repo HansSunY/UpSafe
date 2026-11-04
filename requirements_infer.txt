@@ -1,0 +1,17 @@
+# UpSafe — inference / evaluation environment
+# NOTE: independent from the training env. The merged upcycled model ships its own
+# modeling file (upcycle/infer/modeling_*.py) which targets newer transformers
+# (create_causal_mask / GradientCheckpointingLayer), hence >=4.53.
+torch==2.5.1
+transformers==4.53.1
+vllm==0.7.2                   # V0 engine; trust_remote_code=True required
+peft==0.14.0
+datasets>=2.20.0
+safetensors>=0.4.3
+pandas
+numpy<2
+fire
+tqdm
+requests
+matplotlib
+openai                        # only needed if the judge uses an OpenAI-compatible endpoint

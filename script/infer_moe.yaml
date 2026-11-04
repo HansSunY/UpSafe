@@ -1,5 +1,0 @@
-model_name_or_path: ./Llama-3.1-8B-Instruct
-adapter_name_or_path: ./llama_8b_s2
-template: llama3
-finetuning_type: moe
-do_sample: false

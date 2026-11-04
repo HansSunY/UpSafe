@@ -1,0 +1,32 @@
+{
+  "star": {
+    "file_name": "star_train.json",
+    "file_sha1": "089c53ead6e2cb17ce7e26bab45d7119a8d985dd",
+    "safe": "unsafe"
+  },
+  "star_eval": {
+    "file_name": "star_eval.json",
+    "file_sha1": "cd67c361ca7596590e82bb0e034699670ec2e7b7",
+    "safe": "unsafe"
+  },
+  "star_anchor": {
+    "file_name": "star1_anchor.json",
+    "file_sha1": "9d0b37ee2574b12bb989a98dd3d381cc77563098",
+    "safe": "safe"
+  },
+  "star_cot": {
+    "file_name": "star_cot_train.json",
+    "file_sha1": "97f978741974bb3743d79afc19f954b4f62c4862",
+    "safe": "unsafe"
+  },
+  "star_cot_eval": {
+    "file_name": "star_cot_eval.json",
+    "file_sha1": "cf3a690f7342c967de84dff7892a9c4c854aae77",
+    "safe": "unsafe"
+  },
+  "star_cot_anchor": {
+    "file_name": "star1_cot_anchor.json",
+    "file_sha1": "c7b9a5337ffdd66ef0b0086409760b371c937077",
+    "safe": "safe"
+  }
+}

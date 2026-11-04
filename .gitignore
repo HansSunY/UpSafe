@@ -1,0 +1,45 @@
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+build/
+dist/
+
+# experiment outputs
+outputs/
+runs/
+tfevent/
+*.log
+trainer_state.json
+trainer_log.jsonl
+training_args.bin
+
+# model artifacts / caches
+# (anchored: only the root ./models/ download dir — upcycle/models/ ships code)
+/models/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+*.adapter/
+
+# datasets caches
+.cache/
+*.arrow
+
+# editors / os
+.idea/
+.vscode/
+*~
+.DS_Store
+
+# LLaMA-Factory webui
+flagged/
+
+# Local patch backups and review caches
+setup/backups/
+.pytest_cache/
+/results/
+/scan/features*/

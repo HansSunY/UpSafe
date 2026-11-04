@@ -1,0 +1,14 @@
+# UpSafe — training environment (single GPU node / multi-GPU with DeepSpeed)
+# Python 3.10 recommended. Install order matters: run setup/init_env.sh after pip install.
+torch==2.5.1
+transformers==4.51.3          # must be <=4.51.3 for the vendored LLaMA-Factory
+peft==0.14.0                  # patched by setup/init_env.sh (adds the MOE tuner)
+datasets>=2.20.0,<=3.5.0
+accelerate>=0.34.0,<=1.6.0
+deepspeed>=0.14.0,<=0.16.5             # ZeRO-3 for the s1/s2 training configs
+safetensors>=0.4.3
+tensorboard
+fire
+tqdm
+pandas
+numpy<2

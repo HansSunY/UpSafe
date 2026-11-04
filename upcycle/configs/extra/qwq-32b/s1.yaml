@@ -1,0 +1,45 @@
+### model
+model_name_or_path: ./models/QwQ-32B
+
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+do_eval: false
+finetuning_type: moe
+deepspeed: ./setup/ds_config_zero3.json
+
+### dataset
+dataset: star_cot
+dataset_dir: ./LLaMA-Factory/data
+template: qwen
+cutoff_len: 10240
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: ./outputs/qwq-32b_s1
+logging_steps: 1
+save_steps: 100
+plot_loss: true
+overwrite_output_dir: true
+print_param_status: true
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 4
+num_train_epochs: 20
+save_total_limit: 2
+learning_rate: 5.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+report_to: tensorboard
+aux_loss_coef: 0.01
+layers_to_moe: 47,48,49,50
+moe_num_experts: 4
+topk: 2
+disable_gradient_checkpointing: true
