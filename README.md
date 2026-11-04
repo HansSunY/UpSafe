@@ -1,4 +1,4 @@
-# UpSafe℃: Upcycling for Controllable Safety in Large Language Models
+# UpSafe℃: Upcycling for Controllable Safety in Large Language Models (NeurIPS 2026)
 
 Official implementation of **UpSafe℃** (NeurIPS 2026). UpSafe adds safety experts
 to selected layers of a language model and uses a two-stage training procedure
